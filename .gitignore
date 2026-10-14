@@ -1,0 +1,13 @@
+# Environment variables and secrets
+.env
+.env.*
+
+# PostgreSQL data and local database files
+pgdata/
+postgres_data/
+*.dump
+*.sql.gz
+
+# OS and editor files
+.DS_Store
+.vscode/
