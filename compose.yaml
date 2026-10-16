@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: local_dev_password
       POSTGRES_DB: engineering_lab
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_lab_data:/var/lib/postgresql/data
 

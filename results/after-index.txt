@@ -1,0 +1,14 @@
+                                                                      QUERY PLAN                                                                       
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=639.98..642.43 rows=980 width=12) (actual time=0.868..0.895 rows=1000 loops=1)
+   Sort Key: completed_at DESC
+   Sort Method: quicksort  Memory: 56kB
+   ->  Bitmap Heap Scan on lesson_progress  (cost=26.46..591.30 rows=980 width=12) (actual time=0.147..0.804 rows=1000 loops=1)
+         Recheck Cond: ((user_id = 142) AND (completed_at IS NOT NULL))
+         Heap Blocks: exact=541
+         ->  Bitmap Index Scan on idx_lesson_progress_user_completed  (cost=0.00..26.22 rows=980 width=0) (actual time=0.094..0.094 rows=1000 loops=1)
+               Index Cond: ((user_id = 142) AND (completed_at IS NOT NULL))
+ Planning Time: 0.303 ms
+ Execution Time: 0.959 ms
+(10 rows)
+

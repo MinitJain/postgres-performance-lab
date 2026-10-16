@@ -1,0 +1,12 @@
+                                                       QUERY PLAN                                                       
+------------------------------------------------------------------------------------------------------------------------
+ Sort  (cost=1838.38..1840.78 rows=957 width=12) (actual time=2.514..2.531 rows=1000 loops=1)
+   Sort Key: completed_at DESC
+   Sort Method: quicksort  Memory: 56kB
+   ->  Seq Scan on lesson_progress  (cost=0.00..1791.00 rows=957 width=12) (actual time=0.006..2.479 rows=1000 loops=1)
+         Filter: ((completed_at IS NOT NULL) AND (user_id = 142))
+         Rows Removed by Filter: 99000
+ Planning Time: 0.159 ms
+ Execution Time: 2.573 ms
+(8 rows)
+
