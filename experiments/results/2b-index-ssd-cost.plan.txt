@@ -1,0 +1,11 @@
+                                                                         QUERY PLAN                                                                         
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Index Scan using idx_lesson_progress_user_completed on lesson_progress  (cost=0.42..583.85 rows=960 width=12) (actual time=0.006..0.312 rows=1000 loops=1)
+   Index Cond: ((user_id = 142) AND (completed_at IS NOT NULL))
+   Buffers: shared hit=548
+ Planning:
+   Buffers: shared hit=91
+ Planning Time: 0.084 ms
+ Execution Time: 0.337 ms
+(7 rows)
+
